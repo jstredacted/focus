@@ -97,7 +97,9 @@
 .focus-hide-shorts [tab-identifier="FEshorts"],
 .focus-hide-shorts [page-subtype="shorts"],
 .focus-hide-shorts ytd-pivot-bar-item-renderer:has(a[href="/shorts"]),
-.focus-hide-shorts ytd-search-filter-chip-renderer:has([aria-label="Shorts"]) { display: none !important; }
+.focus-hide-shorts ytd-search-filter-chip-renderer:has([aria-label="Shorts"]),
+.focus-hide-shorts yt-chip-cloud-chip-renderer:has([aria-label="Shorts"]),
+.focus-hide-shorts yt-chip-cloud-chip-renderer:has([title="Shorts"]) { display: none !important; }
 
 /* Ads */
 .focus-hide-ads .ytd-ad-slot-renderer,
@@ -243,6 +245,11 @@
     if (toggles.hideShorts) {
       document.querySelectorAll("ytd-guide-entry-renderer").forEach((el) => {
         if (isGuideEntryForPath(el, ["/shorts"])) el.remove();
+      });
+      // Remove Shorts chip from search filter bar
+      document.querySelectorAll("yt-chip-cloud-chip-renderer").forEach((el) => {
+        const text = el.textContent?.trim();
+        if (text === "Shorts") el.remove();
       });
     }
     if (toggles.hideTrending) {
