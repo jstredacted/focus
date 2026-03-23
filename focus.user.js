@@ -53,6 +53,12 @@
     toggles[key] = GM_getValue(key, true);
   });
 
+  // Immediate redirect — before anything renders
+  if (toggles.hideShorts && location.pathname.startsWith("/shorts")) {
+    location.replace("/");
+    return;
+  }
+
   // ---------------------------------------------------------------------------
   // CSS injection — inject as early as possible (before body)
   // ---------------------------------------------------------------------------
@@ -79,9 +85,11 @@
 .focus-hide-shorts ytd-rich-shelf-renderer[is-shorts],
 .focus-hide-shorts ytd-reel-item-renderer,
 .focus-hide-shorts ytd-mini-guide-entry-renderer[aria-label="Shorts"],
-.focus-hide-shorts ytd-guide-entry-renderer a[title="Shorts"],
-.focus-hide-shorts a[title="Shorts"].yt-simple-endpoint,
-.focus-hide-shorts ytd-pivot-bar-item-renderer:has(a[title="Shorts"]) { display: none !important; }
+.focus-hide-shorts ytd-guide-entry-renderer:has(a[href="/shorts"]),
+.focus-hide-shorts ytd-mini-guide-entry-renderer:has(a[href="/shorts"]),
+.focus-hide-shorts a[title="Shorts"],
+.focus-hide-shorts [tab-identifier="FEshorts"],
+.focus-hide-shorts ytd-pivot-bar-item-renderer:has(a[href="/shorts"]) { display: none !important; }
 
 /* Ads */
 .focus-hide-ads .ytd-ad-slot-renderer,
