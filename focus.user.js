@@ -84,12 +84,20 @@
 .focus-hide-shorts ytd-reel-shelf-renderer,
 .focus-hide-shorts ytd-rich-shelf-renderer[is-shorts],
 .focus-hide-shorts ytd-reel-item-renderer,
+.focus-hide-shorts ytd-rich-section-renderer:has(ytd-reel-shelf-renderer),
+.focus-hide-shorts ytd-item-section-renderer:has(ytd-reel-shelf-renderer),
+.focus-hide-shorts ytd-shelf-renderer:has(a[href="/shorts"]),
+.focus-hide-shorts ytd-video-renderer:has(a[href*="/shorts/"]),
+.focus-hide-shorts ytd-grid-video-renderer:has(a[href*="/shorts/"]),
+.focus-hide-shorts ytd-rich-item-renderer:has(a[href*="/shorts/"]),
 .focus-hide-shorts ytd-mini-guide-entry-renderer[aria-label="Shorts"],
 .focus-hide-shorts ytd-guide-entry-renderer:has(a[href="/shorts"]),
 .focus-hide-shorts ytd-mini-guide-entry-renderer:has(a[href="/shorts"]),
 .focus-hide-shorts a[title="Shorts"],
 .focus-hide-shorts [tab-identifier="FEshorts"],
-.focus-hide-shorts ytd-pivot-bar-item-renderer:has(a[href="/shorts"]) { display: none !important; }
+.focus-hide-shorts [page-subtype="shorts"],
+.focus-hide-shorts ytd-pivot-bar-item-renderer:has(a[href="/shorts"]),
+.focus-hide-shorts ytd-search-filter-chip-renderer:has([aria-label="Shorts"]) { display: none !important; }
 
 /* Ads */
 .focus-hide-ads .ytd-ad-slot-renderer,
