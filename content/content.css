@@ -1,1 +1,53 @@
-/* Content script styles placeholder */
+/* === Homepage Recommendations === */
+.focus-hide-homepage ytd-rich-grid-renderer,
+.focus-hide-homepage ytd-browse[page-subtype="home"] #contents {
+  display: none !important;
+}
+
+/* === Sidebar Recommendations === */
+.focus-hide-sidebar #secondary,
+.focus-hide-sidebar #related {
+  display: none !important;
+}
+
+/* === End Screen Recommendations === */
+.focus-hide-endscreen .ytp-endscreen-content,
+.focus-hide-endscreen .ytp-ce-element {
+  display: none !important;
+}
+
+/* === Comments === */
+.focus-hide-comments #comments,
+.focus-hide-comments ytd-comments {
+  display: none !important;
+}
+
+/* === Shorts === */
+.focus-hide-shorts ytd-reel-shelf-renderer,
+.focus-hide-shorts ytd-rich-shelf-renderer[is-shorts],
+.focus-hide-shorts ytd-reel-item-renderer {
+  display: none !important;
+}
+
+/* === Ads === */
+.focus-hide-ads .ytd-ad-slot-renderer,
+.focus-hide-ads ytd-ad-slot-renderer,
+.focus-hide-ads ytd-promoted-sparkles-web-renderer,
+.focus-hide-ads .ytp-ad-module,
+.focus-hide-ads #player-ads,
+.focus-hide-ads ytd-banner-promo-renderer,
+.focus-hide-ads .ytp-ad-overlay-container {
+  display: none !important;
+}
+
+/* === Notification Badge === */
+.focus-hide-notification-badge ytd-notification-topbar-button-renderer .notification-count {
+  display: none !important;
+}
+
+/* === Live Chat === */
+.focus-hide-livechat ytd-live-chat-frame,
+.focus-hide-livechat #chat,
+.focus-hide-livechat #chat-container {
+  display: none !important;
+}
