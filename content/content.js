@@ -190,7 +190,7 @@
       }
     }
     applyClasses();
-    onNavigate();
+    scanGuideEntries();
   });
 
   // --- Initialization: wait for document.body ---
