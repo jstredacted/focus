@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="popup.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <h1>Focus</h1>
-    <script src="popup.js"></script>
+  <div class="popup">
+    <h1 class="title">Focus</h1>
+    <div class="toggles">
+      <label class="toggle-row">
+        <span>Homepage</span>
+        <input type="checkbox" data-key="hideHomepage">
+        <span class="slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>Sidebar</span>
+        <input type="checkbox" data-key="hideSidebar">
+        <span class="slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>End Screen</span>
+        <input type="checkbox" data-key="hideEndScreen">
+        <span class="slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>Comments</span>
+        <input type="checkbox" data-key="hideComments">
+        <span class="slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>Shorts</span>
+        <input type="checkbox" data-key="hideShorts">
+        <span class="slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>Ads</span>
+        <input type="checkbox" data-key="hideAds">
+        <span class="slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>Trending</span>
+        <input type="checkbox" data-key="hideTrending">
+        <span class="slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>Notification Badge</span>
+        <input type="checkbox" data-key="hideNotificationBadge">
+        <span class="slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>Live Chat</span>
+        <input type="checkbox" data-key="hideLiveChat">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  <script src="popup.js"></script>
 </body>
 </html>
