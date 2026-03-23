@@ -77,7 +77,11 @@
 /* Shorts */
 .focus-hide-shorts ytd-reel-shelf-renderer,
 .focus-hide-shorts ytd-rich-shelf-renderer[is-shorts],
-.focus-hide-shorts ytd-reel-item-renderer { display: none !important; }
+.focus-hide-shorts ytd-reel-item-renderer,
+.focus-hide-shorts ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+.focus-hide-shorts ytd-guide-entry-renderer a[title="Shorts"],
+.focus-hide-shorts a[title="Shorts"].yt-simple-endpoint,
+.focus-hide-shorts ytd-pivot-bar-item-renderer:has(a[title="Shorts"]) { display: none !important; }
 
 /* Ads */
 .focus-hide-ads .ytd-ad-slot-renderer,
@@ -237,9 +241,16 @@
   // SPA navigation
   // ---------------------------------------------------------------------------
 
+  function redirectIfShorts() {
+    if (toggles.hideShorts && location.pathname.startsWith("/shorts")) {
+      window.location.replace("/");
+    }
+  }
+
   document.addEventListener("yt-navigate-finish", () => {
     applyClasses();
     scanGuideEntries();
+    redirectIfShorts();
   });
 
   // ---------------------------------------------------------------------------
@@ -470,6 +481,7 @@
     applyClasses();
     startObserver();
     scanGuideEntries();
+    redirectIfShorts();
     buildUI();
   }
 
